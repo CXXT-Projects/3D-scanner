@@ -1,5 +1,3 @@
-% cc = load('Calib_Results.mat', ff);
-
 function []  = calc_world_params(output_file_name)
 
 length = 7;
@@ -8,11 +6,6 @@ external_matrix = get_external_params();
 internal_matrix = get_internal_params();
 
 for i = 1:length
-%     omc = mat.(strcat('omc_', num2str(i)));
-%     t = mat.(strcat('Tc_', num2str(i)));
-%     rotVecToMat = rotationVectorToMatrix(omc);
-%     out = [rotVecToMat, t];
-%     result(:, :, i) = out;
     c_matrix = internal_matrix * external_matrix(:, [1 2 4], i);
     c_matrix_inv = inv(c_matrix);
     data = importdata(strcat('image_find', num2str(i),  '.txt'));
