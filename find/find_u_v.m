@@ -15,7 +15,7 @@ for i = 1:input_img_num
     if row_length ~= col_length
         fprintf('Error: the length of the row is not equal to the length of the col');
         fprintf('\n');
-        continue 
+        continue
     end
     
     for m=1 : row_length

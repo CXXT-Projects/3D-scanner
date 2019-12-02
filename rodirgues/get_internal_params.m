@@ -1,10 +1,6 @@
-% cc = load('Calib_Results.mat', ff);
-
 function [internal_matrix]  = get_internal_params()
 
 mat = load('Calib_Results.mat');
-
-length = 7;
 
 cc = mat.('cc');
 fc = mat.('fc');
