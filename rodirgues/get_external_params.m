@@ -4,7 +4,7 @@
 function [external_matrix]  = get_external_params()
 
 % load data from the Calib_Results.mat
-calib_result = load('Calib_Results.mat');
+calib_result = load('../no_laser_images/Calib_Results.mat');
 
 length = 7;
 external_matrix = zeros(3, 4, 7);

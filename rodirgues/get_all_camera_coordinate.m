@@ -1,12 +1,12 @@
-function [X, Y, Z]  = get_all_camera_coordinate()
+function [X, Y, Z]  = get_all_camera_coordinate(length)
 X = [];
 Y = [];
 Z = [];
     
-length = 7;
+camera_coordinate_results = load('./camera_coordinate_results.mat');
 
 for i = 1:length
-    data = importdata(strcat('camera_coordinate', num2str(i),  '.txt'));
+    data = camera_coordinate_results.(strcat('c_c', num2str(i)));
     x = data(:, 1);
     y = data(:, 2);
     z = data(:, 3);

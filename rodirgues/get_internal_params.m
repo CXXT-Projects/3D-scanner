@@ -1,6 +1,6 @@
 function [internal_matrix]  = get_internal_params()
 
-mat = load('Calib_Results.mat');
+mat = load('../no_laser_images/Calib_Results.mat');
 
 cc = mat.('cc');
 fc = mat.('fc');
