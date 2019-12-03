@@ -1,7 +1,7 @@
 % find the param u and v
-% input_img_num {num} 输入图片的数量
-% input_file_name {string} 输入要处理的图片名
-% output_file_name {string} 输出的图片名 
+% input_img_num 输入图片数量
+% input_file_name 
+% output_file_name 
 
 function [s]  = find_u_v( input_img_num, input_file_name, output_file_name )
 
@@ -18,7 +18,7 @@ for i = 1:input_img_num
         continue
     end
     
-    for m=1 : row_length
+    for m = 1 : row_length
         fprintf(fid, '%d %d\n', row(m), col(m));
         
     end
