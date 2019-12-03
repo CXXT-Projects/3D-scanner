@@ -9,16 +9,16 @@ for i = 1:length
     c_matrix = internal_matrix * external_matrix(:, [1 2 4], i);
     c_matrix_inv = inv(c_matrix);
     
-    data = find_result.(strcat('find_', num2str(i)));
-    [m, n] = size(data);
+    current_data = find_result.(strcat('find_', num2str(i)));
+    [m, n] = size(current_data);
     
     field_name = strcat('w_c', num2str(i));
-    %   init result
+    %   init result 
     result = zeros(m, 3);
     
     for j = 1:m
-        u = data(j, 1);
-        v = data(j, 2);
+        u = current_data(j, 1);
+        v = current_data(j, 2);
         pixel_matrix = [u; v; 1];
         %   1/s：参数的倒数
         s = c_matrix_inv(3, :) * pixel_matrix;  
