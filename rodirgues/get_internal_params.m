@@ -1,6 +1,8 @@
-function [internal_matrix]  = get_internal_params()
+%  calib_result_file_path: 相机标定结果文件
+%  '../no_laser_images/Calib_Results.mat'
+function [internal_matrix]  = get_internal_params(calib_file_path)
 
-mat = load('../no_laser_images/Calib_Results.mat');
+mat = load(calib_file_path);
 
 cc = mat.('cc');
 fc = mat.('fc');

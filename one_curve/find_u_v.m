@@ -6,7 +6,7 @@
 function []  = find_u_v( input_img_num, input_file_name, output_file_name )
 
 for i = 1:input_img_num
-    data = imread(strcat('../thresh/', input_file_name, num2str(i), '.bmp'));
+    data = imread(strcat(input_file_name, num2str(i), '.bmp'));
     
 %     find() 返回向量或者矩阵中不为0的元素的位置索引
     [row, col] = find(data);
