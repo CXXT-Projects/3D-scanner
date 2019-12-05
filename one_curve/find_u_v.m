@@ -22,7 +22,7 @@ for i = 1:input_img_num
     end
 %   分别生成不同的field
     field_name = strcat('find_', num2str(i));
-    data = [col, row];
+    data = [row, col];
     eval([field_name, '=', mat2str(data), ';']);
 %     保存为.mat文件
     save(output_file_name, field_name);
