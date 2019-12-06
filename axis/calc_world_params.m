@@ -1,7 +1,7 @@
-function []  = calc_world_params(image_num, find_result_file_path, output_file_name)
+function []  = calc_world_params(image_num, calib_file_path, find_result_file_path, output_file_name)
 
-external_matrix = get_external_params();
-internal_matrix = get_internal_params();
+external_matrix = get_external_params(calib_file_path);
+internal_matrix = get_internal_params(calib_file_path);
 find_result = load(find_result_file_path);
 
 for i = 1:image_num
