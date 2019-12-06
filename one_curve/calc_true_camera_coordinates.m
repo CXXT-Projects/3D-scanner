@@ -1,11 +1,11 @@
-function [] = calc_true_camera_coordinates(length, output_file_name)
+function [x0] = calc_true_camera_coordinates(length, output_file_name)
 
 find_results = load('./find_results.mat');
 [internal_matrix]  = get_internal_params('../no_laser_images/Calib_Results.mat');
 % 内参
 A = internal_matrix;
 
-[X, Y, Z] = get_all_camera_coordinate(1, '../rodirgues/camera_coordinate_results.mat');
+[X, Y, Z] = get_all_camera_coordinate(7, '../rodirgues/camera_coordinate_results.mat');
 
 [fitresult, gof] = createFit(X, Y, Z);
 %  coeffs = [p00, p10, p10]
@@ -15,6 +15,8 @@ p10 = coeffs(2);
 p01 = coeffs(3);
 % formula(fitresult) %   获取表达式
 % p00 + p10*x + p01*y = z
+% (x0, 0, 0)
+x0 = -(p00 / p10);
 
 for i = 1:length
 
