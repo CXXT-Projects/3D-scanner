@@ -1,5 +1,9 @@
-% 灰度归一化
-function [s]  = image_thresh_average( input_img_num, input_file_name, output_file_name )
+% 灰度归一化取平均
+% input_img_num {num} 输入图片的数量
+% input_file_name {string} 输入要处理的图片名
+% output_file_name {string} 输出的图片名 image_thresh_average*
+
+function []  = image_thresh_average( input_img_num, input_file_name, output_file_name )
 
 for i = 1 :input_img_num
     data = imread(strcat(input_file_name, num2str(i), '.bmp'));

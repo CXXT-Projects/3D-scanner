@@ -1,9 +1,10 @@
-% result_file_path: 保存相机坐标系下的 x' y' z'的文件 './camera_coordinate_results.mat'
+% result_file_path: 保存相机坐标系下的 x' y' z'的文件
+
 function [X, Y, Z]  = get_all_camera_coordinate(length, results_file_path)
 X = [];
 Y = [];
 Z = [];
-    
+
 camera_coordinate_results = load(results_file_path);
 
 for i = 1:length
