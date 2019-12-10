@@ -20,7 +20,7 @@ for i = 1:group_nums
     
     f=@(p)(x - p(1)).^2+(y - p(2)).^2+(z - p(3)).^2-p(4).^2;
     
-    p=lsqnonlin(f,[p0 r]);
+    p=lsqnonlin(f, [p0 r]);
     
     X = [X, p(1)];
     Y = [Y, p(2)];
