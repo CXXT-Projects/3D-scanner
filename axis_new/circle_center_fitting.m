@@ -16,11 +16,11 @@ for i = 1:group_nums
     % 以重心为初始圆心
     p0=mean(data);
     % 以到重心的平均距离为初始半径
-    r02=mean(sqrt(sum((data - repmat(p0, [size(data, 1) 1])).^2, 2)));
+    r=mean(sqrt(sum((data - repmat(p0, [size(data, 1) 1])).^2, 2)));
     
-    f=@(p)(data(:,1)-p(1)).^2+(data(:,2)-p(2)).^2+(data(:,3)-p(3)).^2-p(4).^2;
+    f=@(p)(x - p(1)).^2+(y - p(2)).^2+(z - p(3)).^2-p(4).^2;
     
-    p=lsqnonlin(f,[p0 r02]);
+    p=lsqnonlin(f,[p0 r]);
     
     X = [X, p(1)];
     Y = [Y, p(2)];
