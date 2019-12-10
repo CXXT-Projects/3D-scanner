@@ -12,10 +12,7 @@ c_c_results = load(c_c_results_file_path);
 
 for i = 1:points_nums
     field_name = strcat('c_c_same_height', num2str(i));
-    %   第一组数据，先创建.mat文件
-    if i == 1
-        save(output_file_name, field_name);
-    end
+    
     %   init result
     result = zeros(same_height_nums, 3);
     for j = 1 : same_height_nums
@@ -24,8 +21,11 @@ for i = 1:points_nums
     end
     
     eval([field_name, '=', mat2str(result), ';']);
-    %     保存为.mat文件
-    save(output_file_name, field_name, '-append');    
+    if i == 1
+        save(output_file_name, field_name);
+    else
+        save(output_file_name, field_name, '-append');
+    end
     
 end
 
