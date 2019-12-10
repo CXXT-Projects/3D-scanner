@@ -30,8 +30,9 @@ for i = 1:image_num
         save(output_file_name, field_name);
     else
         save(output_file_name, field_name, '-append');
-    end
+     end
     
+    end
 end
 
 end
