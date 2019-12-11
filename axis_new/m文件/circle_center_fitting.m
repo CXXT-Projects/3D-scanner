@@ -21,7 +21,7 @@ for i = 1:group_nums
         % 以到重心的平均距离为初始半径
         r=mean(sqrt(sum((data - repmat(p0, [size(data, 1) 1])).^2, 2)));
 
-        f=@(p)(x - p(1)).^2+(y - p(2)).^2+(z - p(3)).^2-p(4).^2;
+        f=@(p)((x - p(1)).^2+(y - p(2)).^2+(z - p(3)).^2 - p(4).^2);
 
         p=lsqnonlin(f, [p0 r]);
 
