@@ -14,7 +14,7 @@ external_matrix = zeros(3, 4, 7);
 for i = 1:length
     omc = calib_result.(strcat('omc_', num2str(i)));
     t = calib_result.(strcat('Tc_', num2str(i)));
-    % rodirgues transform vec to matrix 
+    % rodirgues transform vec to matrix
     R = rotationVectorToMatrix(omc);
     out = [R, t];
     external_matrix(:, :, i) = out;
