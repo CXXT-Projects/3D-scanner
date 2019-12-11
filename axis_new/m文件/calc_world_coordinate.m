@@ -1,8 +1,15 @@
-function []  = calc_world_params(image_num, calib_file_path, find_results_file_path, output_file_name)
+% 计算世界坐标系下的坐标点
+
+% image_num: 图片数量
+% calib_file_path: Calib_Results.mat文件的路径
+% u_v_results_file_path: u,v点的坐标
+% output_file_name: 输出文件的名称
+
+function []  = calc_world_coordinate(image_num, calib_file_path, u_v_results_file_path, output_file_name)
 
 external_matrix = get_external_params(calib_file_path);
 internal_matrix = get_internal_params(calib_file_path);
-find_result = load(find_results_file_path);
+find_result = load(u_v_results_file_path);
 
 for i = 1:image_num
     % B matrix   

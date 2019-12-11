@@ -31,10 +31,3 @@ fitting_circle_center = [X', Y', Z'];
 save(output_file_path, 'fitting_circle_center');
 
 end
-
-% x=X(:,1);y=X(:,2);z=X(:,3);
-% p0=mean(X);%以重心为初始圆心
-% r02=mean(sqrt(sum((X-repmat(p0,[size(X,1) 1])).^2,2)));%以到重心的平均距离为初始半径
-% f=@(p)(X(:,1)-p(1)).^2+(X(:,2)-p(2)).^2+(X(:,3)-p(3)).^2-p(4).^2;
-% p=lsqnonlin(f,[p0 r02]);
-% x0=p(1);y0=p(2);z0=p(3);

@@ -1,4 +1,11 @@
-function []  = calc_camera_params(image_num, calib_file_path, w_c_results_file_path, output_file_name)
+% 计算相机坐标系下的坐标点
+
+% image_num: 图片数量
+% calib_file_path: Calib_Results.mat文件的路径
+% w_c_results_file_path: 相机坐标系下的坐标点
+% output_file_name: 输出文件的名称
+
+function []  = calc_camera_coordinate(image_num, calib_file_path, w_c_results_file_path, output_file_name)
 
 external_matrix = get_external_params(calib_file_path);
 world_coordinate_results = load(w_c_results_file_path);

@@ -1,4 +1,8 @@
+% 获取所有的相机坐标系下的点
+
+% image_num: 拍摄的图片数量 
 % result_file_path: 保存相机坐标系下的 x' y' z'的文件 './camera_coordinate_results.mat'
+
 function [X, Y, Z]  = get_all_camera_coordinate(image_num, results_file_path)
 X = [];
 Y = [];
