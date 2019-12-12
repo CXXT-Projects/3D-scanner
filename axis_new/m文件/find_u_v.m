@@ -9,9 +9,9 @@ function []  = find_u_v( input_img_num, input_file_path, output_file_name )
 for i = 1:input_img_num
     data = imread(strcat(input_file_path, num2str(i), '.bmp'));
     
-%     find() 返回向量或者矩阵中不为0的元素的位置索引
+    %     find() 返回向量或者矩阵中不为0的元素的位置索引
     [row, col] = find(data);
-
+    
     row_length = length(row(:));
     col_length = length(col(:));
     
@@ -21,11 +21,11 @@ for i = 1:input_img_num
         fprintf('\n');
         continue
     end
-%   分别生成不同的field
+    %   分别生成不同的field
     field_name = strcat('find_', num2str(i));
     data = [col, row];
     eval([field_name, '=', mat2str(data), ';']);
-%     保存为.mat文件
+    %     保存为.mat文件
     save(output_file_name, field_name, '-append');
     
 end

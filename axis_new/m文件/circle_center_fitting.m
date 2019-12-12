@@ -1,4 +1,4 @@
-% ÄâºÏÍ¬Ò»¸ß¶ÈµÄÔ²ÐÄ
+% ï¿½ï¿½ï¿½Í¬Ò»ï¿½ß¶Èµï¿½Ô²ï¿½ï¿½
 
 function [X, Y, Z] = circle_center_fitting(group_nums, c_c_same_height_results_path, output_file_path)
 
@@ -8,27 +8,27 @@ Y = [];
 Z = [];
 
 c_c_same_height_results = load(c_c_same_height_results_path);
- 
+
 for i = 1:group_nums
-   
     for j = 1 : 1
+
         data = c_c_same_height_results.(strcat('c_c_same_height', num2str(i), '_', num2str(j)));
         [O, R, F] = ff(data');
-%         x = data(:, 1);
-%         y = data(:, 2);
-%         z = data(:, 3);
-%         % ÒÔÖØÐÄÎª³õÊ¼Ô²ÐÄ
-%         p0=mean(data);
-%         % ÒÔµ½ÖØÐÄµÄÆ½¾ù¾àÀëÎª³õÊ¼°ë¾¶
-%         r=mean(sqrt(sum((data - repmat(p0, [size(data, 1) 1])).^2, 2)));
-% 
-%         f=@(p)((x - p(1)).^2+(y - p(2)).^2+(z - p(3)).^2 - p(4).^2);
-% 
-%         p=lsqnonlin(f, [p0 r]);
-% 
-%         X = [X, p(1)];
-%         Y = [Y, p(2)];
-%         Z = [Z, p(3)];
+        %         x = data(:, 1);
+        %         y = data(:, 2);
+        %         z = data(:, 3);
+        %         % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ê¼Ô²ï¿½ï¿½
+        %         p0=mean(data);
+        %         % ï¿½Ôµï¿½ï¿½ï¿½ï¿½Äµï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ê¼ï¿½ë¾¶
+        %         r=mean(sqrt(sum((data - repmat(p0, [size(data, 1) 1])).^2, 2)));
+        %
+        %         f=@(p)((x - p(1)).^2+(y - p(2)).^2+(z - p(3)).^2 - p(4).^2);
+        %
+        %         p=lsqnonlin(f, [p0 r]);
+        %
+        %         X = [X, p(1)];
+        %         Y = [Y, p(2)];
+        %         Z = [Z, p(3)];
         X = [X, O(1)];
         Y = [Y, O(2)];
         Z = [Z, O(3)];
