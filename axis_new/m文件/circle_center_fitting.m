@@ -11,7 +11,7 @@ c_c_same_height_results = load(c_c_same_height_results_path);
  
 for i = 1:group_nums
    
-    for j = 1 : 2
+    for j = 1 : 1
         data = c_c_same_height_results.(strcat('c_c_same_height', num2str(i), '_', num2str(j)));
         [O, R, F] = ff(data');
 %         x = data(:, 1);
