@@ -1,4 +1,4 @@
-% ï¿½ï¿½ï¿½Í¬Ò»ï¿½ß¶Èµï¿½Ô²ï¿½ï¿½
+% ÈýÎ¬×ø±êµãÄâºÏÔ²ÐÄºÍ°ë¾¶
 
 function [X, Y, Z] = circle_center_fitting(group_nums, c_c_same_height_results_path, output_file_path)
 
@@ -17,9 +17,7 @@ for i = 1:group_nums
         %         x = data(:, 1);
         %         y = data(:, 2);
         %         z = data(:, 3);
-        %         % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ê¼Ô²ï¿½ï¿½
         %         p0=mean(data);
-        %         % ï¿½Ôµï¿½ï¿½ï¿½ï¿½Äµï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ê¼ï¿½ë¾¶
         %         r=mean(sqrt(sum((data - repmat(p0, [size(data, 1) 1])).^2, 2)));
         %
         %         f=@(p)((x - p(1)).^2+(y - p(2)).^2+(z - p(3)).^2 - p(4).^2);
