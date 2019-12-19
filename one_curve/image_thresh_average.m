@@ -3,9 +3,9 @@
 % input_file_name {string} 输入要处理的图片名
 % output_file_name {string} 输出的图片名 image_thresh_average*
 
-function []  = image_thresh_average( input_img_num, input_file_name, output_file_name )
+function []  = image_thresh_average( input_num, input_file_name, output_file_name )
 
-for i = 1 :input_img_num
+for i = 1 :input_num
     data = imread(strcat(input_file_name, num2str(i), '.bmp'));
     % m_size 是行数 n_size 是列数
     [m_size, n_size]=size(data);
