@@ -1,5 +1,5 @@
 function [] =  read_images(img_num,img_name,output_file_name)
-
+% 读取image_rect，保存成一个mat文件
 
 for i = 1:img_num
     field_name = strcat('a',num2str(i));

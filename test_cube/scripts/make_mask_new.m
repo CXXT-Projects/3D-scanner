@@ -1,5 +1,5 @@
 function [mask1] =  make_mask_new(y_max,img_num,output_file_name)
-%实现输入mask的坐标范围（x_min, x_max, y_min, y_max），能够生成mask矩阵。
+%实现输入mask的坐标范围（0, 1280, 0, y_max），能够生成mask矩阵。
 %mask矩阵大小与图像大小相同（1280 * 1024）
 %mask矩阵在确定的mask区域内的值全为1，区域外的值全为0。
 mask = zeros(1024,1280);
