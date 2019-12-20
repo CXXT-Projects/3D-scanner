@@ -40,7 +40,6 @@ for i = 1 :input_num
         else
             mean_index = round(mean(image_thresh_find));
             result(m, mean_index) = 1;
-            result(m, mean_index) = result(m, mean_index) / 255;
         end
     end
     
