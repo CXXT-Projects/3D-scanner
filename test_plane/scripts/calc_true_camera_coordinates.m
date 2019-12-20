@@ -21,7 +21,8 @@ x0 = -(p00 / p10);
 
 for i = 1:length
     
-    data = find_results.(strcat('find_', num2str(i)));
+%     data = find_results.(strcat('find_', num2str(i)));
+    data = find_results.(strcat('thresh_average', num2str(i)));
     [m, n] = size(data);
     
     field_name = strcat('c_c', num2str(i));
