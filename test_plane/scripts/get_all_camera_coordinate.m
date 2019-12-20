@@ -16,9 +16,9 @@ for i = 1:length
     y = data(:, 2);
     z = data(:, 3);
     
-%     index = index + 1;
-%     plot(x, y, color(index));
-%     hold on;
+    %     index = index + 1;
+    %     plot(x, y, color(index));
+    %     hold on;
     X = [X, x'];
     Y = [Y, y'];
     Z = [Z, z'];
