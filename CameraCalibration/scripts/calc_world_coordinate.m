@@ -5,18 +5,18 @@
 % u_v_results_file_path: u,v点的坐标
 % output_filename: 输出文件的名称
 
-function []  = calc_world_coordinate(image_num, calib_file_path, u_v_results_file_path, output_filename)
+function []  = calc_world_coordinate(input_num, calib_file_path, u_v_results_file_path, output_filename)
 
-external_matrix = get_external_params(calib_file_path);
+external_matrix = get_external_params(input_num, calib_file_path);
 internal_matrix = get_internal_params(calib_file_path);
 find_result = load(u_v_results_file_path);
 
-for i = 1:image_num
+for i = 1:input_num
     % B matrix
     c_matrix = internal_matrix * external_matrix(:, [1 2 4], i);
     c_matrix_inv = inv(c_matrix);
     
-    current_data = find_result.(strcat('find', num2str(i)));
+    current_data = find_result.(strcat('find_', num2str(i)));
     [m, n] = size(current_data);
     
     field_name = strcat('w_c', num2str(i));

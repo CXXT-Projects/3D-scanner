@@ -11,6 +11,18 @@ Z = [];
 camera_coordinate_results = load(results_file_path);
 
 for i = 1:image_num
+%     if i == 10
+%         continue
+%     end
+%     if i == 7
+%         continue
+%     end
+%     if i == 4
+%         continue
+%     end
+%     if i == 6
+%         continue
+%     end
     data = camera_coordinate_results.(strcat('c_c', num2str(i)));
     x = data(:, 1);
     y = data(:, 2);

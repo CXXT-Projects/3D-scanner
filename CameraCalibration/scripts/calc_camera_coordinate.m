@@ -5,12 +5,12 @@
 % w_c_results_file_path: 相机坐标系下的坐标点
 % output_filename: 输出文件的名称
 
-function []  = calc_camera_coordinate(image_num, calib_file_path, w_c_results_file_path, output_filename)
+function []  = calc_camera_coordinate(input_num, calib_file_path, w_c_results_file_path, output_filename)
 
-external_matrix = get_external_params(calib_file_path);
+external_matrix = get_external_params(input_num, calib_file_path);
 world_coordinate_results = load(w_c_results_file_path);
 
-for i = 1:image_num
+for i = 1:input_num
     %     外参矩阵
     current_external_matrix = external_matrix(:, [1 2 4], i);
     
