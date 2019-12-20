@@ -11,7 +11,7 @@ camera_coordinate_results = load(results_file_path);
 % index = 0;
 
 for i = 1:length
-    data = camera_coordinate_results.(strcat('c_c', num2str(i)));
+    data = camera_coordinate_results.(strcat('c_c_rotate', num2str(i)));
     x = data(:, 1);
     y = data(:, 2);
     z = data(:, 3);
