@@ -10,6 +10,7 @@ Z = [];
 
 camera_coordinate_results = load(results_file_path);
 
+<<<<<<< Updated upstream
 for i = image_num:image_num
 %     if i == 13
 %         continue
@@ -23,6 +24,21 @@ for i = image_num:image_num
 %     if i == 6
 %         continue
 %     end
+=======
+for i = 1:image_num
+    if i == 13
+        continue
+    end
+    if i == 7
+        continue
+    end
+    if i == 8
+        continue
+    end
+    if i == 12
+        continue
+    end
+>>>>>>> Stashed changes
     data = camera_coordinate_results.(strcat('c_c', num2str(i)));
     x = data(:, 1);
     y = data(:, 2);

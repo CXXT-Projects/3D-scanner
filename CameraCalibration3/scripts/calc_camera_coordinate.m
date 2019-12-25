@@ -25,10 +25,10 @@ for i = 1:input_num
         % 世界坐标系下的 x 和 y
         w_x = current_data(j, 1);
         w_y = current_data(j, 2);
-        pixel_matrix = [w_x; w_y; 1];
-        c_x = current_external_matrix(1, :) * pixel_matrix;
-        c_y = current_external_matrix(2, :) * pixel_matrix;
-        c_z = current_external_matrix(3, :) * pixel_matrix;
+        world_matrix = [w_x; w_y; 1];
+        c_x = current_external_matrix(1, :) * world_matrix;
+        c_y = current_external_matrix(2, :) * world_matrix;
+        c_z = current_external_matrix(3, :) * world_matrix;
         result(j, :) = [c_x, c_y, c_z];
         
         eval([field_name, '=', mat2str(result), ';']);
