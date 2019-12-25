@@ -10,12 +10,13 @@ for i = y_min:y_max
 end
 mask1=uint8(mask);
 
+img_set=load('img_rect.mat');
 field_name = strcat('b',num2str(img_num));
-
-img_mask = strcat('a',num2str(img_num)) .* mask1;
+img_mask = img_set.(strcat('a',num2str(img_num))) .* mask1;
 img_mask=uint8(img_mask);
 eval([field_name,'=',mat2str(img_mask,'class'),';']);
 save(output_file_name,field_name,'-append');
+% save(output_file_name,field_name);
 
 end
 
