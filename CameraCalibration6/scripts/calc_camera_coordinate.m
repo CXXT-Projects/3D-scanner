@@ -10,7 +10,7 @@ function []  = calc_camera_coordinate(input_num, calib_file_path, w_c_results_fi
 external_matrix = get_external_params(input_num, calib_file_path);
 world_coordinate_results = load(w_c_results_file_path);
 
-for i = input_num:input_num
+for i = 1:input_num
     %     Íâ²Î¾ØÕó
     current_external_matrix = external_matrix(:, [1 2 4], i);
     

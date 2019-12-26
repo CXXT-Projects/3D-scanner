@@ -11,7 +11,7 @@ external_matrix = get_external_params(input_num, calib_file_path);
 internal_matrix = get_internal_params(calib_file_path);
 find_result = load(u_v_results_file_path);
 
-for i = input_num:input_num
+for i = 1:input_num
     % B matrix
     c_matrix = internal_matrix * external_matrix(:, [1 2 4], i);
     c_matrix_inv = inv(c_matrix);
