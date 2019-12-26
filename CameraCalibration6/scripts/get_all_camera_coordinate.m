@@ -10,7 +10,8 @@ Z = [];
 
 camera_coordinate_results = load(results_file_path);
 
-for i = 1:image_num
+% for i = 1:image_num
+for i = image_num:image_num
 %     if i == 10
 %         continue
 %     end
