@@ -3,7 +3,7 @@ function [] = cc_rotate(input_num, input_file_name, r, output_file_name)
 
 cc_offset_data = load(input_file_name);
 % 每次旋转的角度（弧度制表示）
-r=r*pi/20;
+r=r * 2 * pi / 25;
 % Rodrigues向量，生成一个旋转矩阵
 % R = rotationVectorToMatrix(r);
 R = rodrigues(r);
