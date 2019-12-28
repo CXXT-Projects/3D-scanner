@@ -46,15 +46,15 @@ for i = 1:image_num
     %   Z 矩阵
     z = A_inv(3, :) * (s .* pixel_mat);
     %   定义方程
-    eqn =  p00 + p10 *  x + p01 * y - z;
+    eqn =  p00 + p10 *  A_inv(1, :) * (s .* pixel_mat) + p01 * A_inv(2, :) * (s .* pixel_mat) - A_inv(3, :) * (s .* pixel_mat);
     %   初始化sol_s
-    sol_s = zeros(1, m);
+    sol_s = zeros(m, 1);
     
     for k = 1 : m
         new_eqn = eqn(1, k) == 0;
         tmp_sol_s = solve(new_eqn);
          tmp_sol_s = double(tmp_sol_s);
-        sol_s(1, k) = tmp_sol_s;
+        sol_s(k, 1) = tmp_sol_s;
     end
     
     
@@ -65,10 +65,10 @@ for i = 1:image_num
     %     new_x = A_inv(1, :) * (sol_s .* pixel_mat);
     %     new_y = A_inv(2, :) * (sol_s .* pixel_mat);
     %     new_z = A_inv(3, :) * (sol_s .* pixel_mat);
-    tmp_result = A_inv *([sol_s(1, :); sol_s(1, :); sol_s(1, :)] .* pixel_mat);
+    tmp_result = A_inv * pixel_mat ;
     
     result = tmp_result;
-   
+    
     %     for j = 1:m
     %         u = data(j, 1);
     %         v = data(j, 2);
