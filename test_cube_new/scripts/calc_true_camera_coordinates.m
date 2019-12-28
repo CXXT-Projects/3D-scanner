@@ -29,6 +29,7 @@ for i = 1:image_num
     %   init result
     result = zeros(m, 3);
     
+    %    speed the calc
     vars = sym(zeros(1, m));
     for num = 1 : m
         variable_name = strcat('s', num2str(num));
@@ -73,7 +74,7 @@ for i = 1:image_num
     %     new_z = A_inv(3, :) * (sol_s .* pixel_mat);
     tmp_result = A_inv *([s(1, :); s(1, :); s(1, :)] .* pixel_mat);
     
-    result = tmp_result;
+    result = tmp_result';
    
     %     for j = 1:m
     %         u = data(j, 1);

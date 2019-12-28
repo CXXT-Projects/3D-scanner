@@ -24,7 +24,7 @@ for i = 1:image_num
 %     if i == 6
 %         continue
 %     end
-    data = camera_coordinate_results.(strcat('c_c', num2str(i)));
+    data = camera_coordinate_results.(strcat('c_c_rotate', num2str(i)));
     x = data(:, 1);
     y = data(:, 2);
     z = data(:, 3);
