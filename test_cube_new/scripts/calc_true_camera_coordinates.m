@@ -29,6 +29,13 @@ for i = 1:image_num
     %   init result
     result = zeros(m, 3);
     
+    vars = sym(zeros(1, m));
+    for num = 1 : m
+        variable_name = strcat('s', num2str(num));
+        eval(['syms ', variable_name, ';']);
+        eval([['vars(1,' num2str(num)  ')'], '=', variable_name, ';']);
+    end
+
     %   声明每组的未知变量s
     syms s;
     %   像素坐标系的齐次表示
@@ -40,21 +47,20 @@ for i = 1:image_num
     %   A矩阵的逆矩阵
     A_inv = inv(A);
     %   X矩阵
-    x = A_inv(1, :) * (s .* pixel_mat);
+    x = A_inv(1, :) * ([vars(1, :); vars(1, :); vars(1, :)] .* pixel_mat);
     %   Y 矩阵
-    y = A_inv(2, :) * (s .* pixel_mat);
+    y = A_inv(2, :) * ([vars(1, :); vars(1, :); vars(1, :)] .* pixel_mat);
     %   Z 矩阵
-    z = A_inv(3, :) * (s .* pixel_mat);
+    z = A_inv(3, :) * ([vars(1, :); vars(1, :); vars(1, :)] .* pixel_mat);
     %   定义方程
-    eqn =  p00 + p10 *  x + p01 * y - z;
-    %   初始化sol_s
-    sol_s = zeros(1, m);
+    eqn =  p00 + p10 *  x + p01 * y - z == zeros(1, m);
+    sol_s = solve(eqn);
     
+    %  init s
+    s = zeros(1, m);
     for k = 1 : m
-        new_eqn = eqn(1, k) == 0;
-        tmp_sol_s = solve(new_eqn);
-         tmp_sol_s = double(tmp_sol_s);
-        sol_s(1, k) = tmp_sol_s;
+        value = sol_s.(strcat('s', num2str(k)));
+        s(1, k) = double(value);
     end
     
     
@@ -65,7 +71,7 @@ for i = 1:image_num
     %     new_x = A_inv(1, :) * (sol_s .* pixel_mat);
     %     new_y = A_inv(2, :) * (sol_s .* pixel_mat);
     %     new_z = A_inv(3, :) * (sol_s .* pixel_mat);
-    tmp_result = A_inv *([sol_s(1, :); sol_s(1, :); sol_s(1, :)] .* pixel_mat);
+    tmp_result = A_inv *([s(1, :); s(1, :); s(1, :)] .* pixel_mat);
     
     result = tmp_result;
    
