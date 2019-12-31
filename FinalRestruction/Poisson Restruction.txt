@@ -1,0 +1,12 @@
+Env: Meshlab 2016.12 http://www.meshlab.net/
+
+Step1:
+Filters-Sampling-Poisson disk Sampling
+Number of samples: 30000
+check Base Mesh Subsampling
+
+Step2:
+Filters-Remeshing,Simplification and Reconstruction-Screened Poisson Surface Reconstruction
+default parameters
+check pre-clean
+
