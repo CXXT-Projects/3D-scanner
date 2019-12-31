@@ -26,9 +26,47 @@
 
 ### 物体扫描
 
+- 拍摄图像并自动化保存（image.bmp）
+
+  调用下方函数，进入debug模式，在循环下的第一行打断点，配合转台舵机，每转一次就运行一次代码
+
+  ```matlab
+  % img_num 拍摄图像的数量
+  
+  auto_read_img(img_num)
+  ```
+
+
+
+- 图像去畸变（image.bmp → image_rect.bmp）
+
+  下载MATLAB的*Camera Calibration Toolbox*
+
+  下载地址：http://www.vision.caltech.edu/bouguetj/calib_doc/index.html#links
+
+  在图像保存文件夹下，命令行输入calib，选择Standard模式，点击Load加载`Calib_Results.mat`，点击Image names输入图像头文字，点击Read images读取所有图像，点击Undistort image去畸变并导出去畸变完成后的图像。
+
+  
+
+- 图像mask处理（image_rect.bmp → image_mask.bmp）
+
+  ```matlab
+  % img_num 需要处理的图像的数量
+  % img_name 保存的图像的文件名
+  % y_max mask的最大的y值，即mask是x:[1 1280], y:[1,y_max]范围为1，其余为0的1280*1024矩阵
+  
+  rect2mask_bmp(img_num,img_name,y_max)
+  ```
+
+  
+
 - 在`./CameraCalibration/scripts/` 文件夹中复制`Calib_Results.mat` , `c_c_results.mat`到 `scripts` 文件夹中，其中`Calib_Results.mat`是相机标定的结果，`c_c_results.mat`是确定激光平面所用到的点云数据。
 
+  
+
 - 在`./examples/Scripts/`复制所有的文件至`scripts`文件夹中。
+
+  
 
 - 二值化操作
 
@@ -41,6 +79,8 @@
   image_thresh(threshold, input_num, input_file_name, output_file_name)
   ```
 
+  
+
 - (u, v) 点取平均
 
   ```matlab
@@ -51,6 +91,8 @@
   image_thresh_average(input_num, input_filename, output_filename)
   ```
 
+  
+
 - 计算真实相机坐标系下的坐标点
 
   ```matlab
@@ -59,6 +101,8 @@
   
   calc_true_camera_coordinates(image_num, output_file_name)
   ```
+
+  
 
 - 把相机坐标系下的点移到轴线坐标系下
 
@@ -71,6 +115,8 @@
   cc_points_offset(t, input_file_name, input_num, output_file_name)
   ```
 
+  
+
 - 把轴线坐标系下的点进行旋转
 
   ```matlab
@@ -81,6 +127,8 @@
   
   cc_rotate(input_num, input_file_name, r, output_file_name)
   ```
+
+  
 
 - 点云的结果
 
