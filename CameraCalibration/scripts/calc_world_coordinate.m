@@ -16,7 +16,7 @@ for i = 1:input_num
     c_matrix = internal_matrix * external_matrix(:, [1 2 4], i);
     c_matrix_inv = inv(c_matrix);
     
-    current_data = find_result.(strcat('find_', num2str(i)));
+    current_data = find_result.(strcat('find', num2str(i)));
     [m, n] = size(current_data);
     
     field_name = strcat('w_c', num2str(i));

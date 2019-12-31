@@ -12,7 +12,7 @@ function [fitresult, gof] = createFit(X, Y, Z)
 %
 %  另请参阅 FIT, CFIT, SFIT.
 
-%  由 MATLAB 于 20-Dec-2019 20:48:53 自动生成
+%  由 MATLAB 于 26-Dec-2019 16:25:44 自动生成
 
 
 %% Fit: 'untitled fit 1'.
@@ -33,5 +33,6 @@ xlabel( 'X', 'Interpreter', 'none' );
 ylabel( 'Y', 'Interpreter', 'none' );
 zlabel( 'Z', 'Interpreter', 'none' );
 grid on
+view( -44.5, 40.8 );
 
 
