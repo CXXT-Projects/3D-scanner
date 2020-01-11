@@ -1,6 +1,9 @@
 % t 平移矩阵
+% input_file_name 相机坐标系下的点mat文件
+% input_num 需要处理的图片数量
+% output_file_name 输出结果文件名(文件格式: .mat)
 
-function [] = cc_points_offset(t, input_file_name, input_num, output_file_name)
+function [] = cc_offset(t, input_file_name, input_num, output_file_name)
 
 cc_data = load(input_file_name);
 
