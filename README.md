@@ -205,11 +205,10 @@
   ```
 
   ![image.png](https://i.loli.net/2019/12/31/eSULa18slkEoQ7n.png)
-- 点云经过网格化后的结果
+- 点云经过网格化后的结果 
+
   ![图片1.png](https://i.loli.net/2020/01/12/9QHdJN624LCgUbt.png)
 
-- 泊松重构后的结果
+- 泊松重构后的结果 
+
   ![图片2.png](https://i.loli.net/2020/01/12/A9SfFlP7Rest1Ig.png)
-
-  
-
