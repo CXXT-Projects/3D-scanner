@@ -1,3 +1,9 @@
+% 把坐标点旋转到轴坐标系下
+
+% input_num 需要处理的数据组数
+% input_file_name 平移后的坐标点
+% r 轴线的方向向量
+% output_file_name 输出结果文件名(文件格式: .mat)
 
 function [] = cc_rotate(input_num, input_file_name, r, output_file_name)
 

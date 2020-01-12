@@ -18,11 +18,78 @@
 - 使用 Camera Calibration Toolbox 对带激光的图片进行去畸变。
 - 把去畸变的图片进行mask操作。
 
+- 二值化操作
 
+  ```matlab
+  % threshold 阈值大小
+  % input_num 处理数据的组数
+  % input_file_path 输入mat文件路径
+  % output_file_path 输出的mat文件路径
+  image_thresh(threshold, input_num, input_file_path, output_file_path)
+  ```
+
+- 灰度归一化取平均（u取小数）得到(u, v)点
+
+  ```matlab
+  % input_num 处理数据的组数
+  % input_file_path 输入的mat文件路径
+  % output_file_path 输出的mat文件路径
+  image_thresh_average(input_num, input_file_path, output_file_path)
+  ```
+
+- 计算世界坐标系下的坐标点
+
+  ```matlab
+  % input_num: 处理数据的组数
+  % calib_file_path: Calib_Results.mat文件的路径
+  % u_v_results_file_path: 存储u,v点的坐标mat路径
+  % output_file_path: 输出的mat文件路径
+  calc_world_coordinate(input_num, calib_file_path, u_v_results_file_path, output_file_path)
+  ```
+
+- 计算相机坐标系下的坐标点
+
+  ```matlab
+  % input_num: 处理数据的数量
+  % calib_file_path: Calib_Results.mat文件的路径
+  % w_c_results_file_path: 相机坐标系下的坐标点
+  % output_file_path: 输出文件的名称
+  calc_camera_coordinate(input_num, calib_file_path, w_c_results_file_path, output_file_path)
+  ```
+
+- 获取所有的相机坐标系下的坐标点 
+
+  ```matlab
+  % input_num: 拍摄的图片数量
+  % result_file_path: 保存相机坐标系下的 x' y' z'的mat文件 
+  [X, Y, Z]  = get_all_camera_coordinate(input_num, results_file_path)
+  ```
+
+- 使用Curve Fitting 工具箱进行激光平面拟合，并Generate Code保存为`createFit.m`，并保存为.fig文件（需要做`axis equal`处理）
+
+  ![image.png](https://i.loli.net/2020/01/12/P1fdCoMbK2nj8YN.png)
+
+  ![image.png](https://i.loli.net/2020/01/12/eOEqPuT1sZkcbV3.png)
 
 ### 确定轴线
 
+- 获取同一高度下的所有坐标
 
+  ```matlab
+  % points_nums: 输入文件中每组的坐标数量
+  % same_height_nums 同一高度的坐标点的数量
+  % c_c_results_file_path: camera_coordinate_results.mat 文件路径
+  % output_file_path: 保存.mat文件的名称
+  get_c_c_in_same_height(points_nums, same_height_nums, c_c_results_file_path, output_file_path)
+  ```
+
+- 使用同一高度的点云数据拟合圆心
+
+  ```matlab
+  calc_circle_center(height_num, c_c_same_height_data_file_path, output_file_path)
+  ```
+
+  ![Snipaste_2020-01-12_21-48-26.png](https://i.loli.net/2020/01/12/dfTucHEJ1XotwYb.png)
 
 ### 物体扫描
 
@@ -81,7 +148,7 @@
 
   
 
-- (u, v) 点取平均
+- 灰度归一化取平均（u取小数）得到(u, v)点
 
   ```matlab
   % input_num 需要处理的图片数量
@@ -138,6 +205,10 @@
   ```
 
   ![image.png](https://i.loli.net/2019/12/31/eSULa18slkEoQ7n.png)
+- 点云经过网格化后的结果 
 
-  
+  ![图片1.png](https://i.loli.net/2020/01/12/9QHdJN624LCgUbt.png)
 
+- 泊松重构后的结果 
+
+  ![图片2.png](https://i.loli.net/2020/01/12/A9SfFlP7Rest1Ig.png)
