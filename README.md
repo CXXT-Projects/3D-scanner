@@ -73,7 +73,17 @@
 
 ### 确定轴线
 
+- 获取同一高度下的所有坐标
 
+  ```matlab
+  % points_nums: 输入文件中每组的坐标数量
+  % same_height_nums 同一高度的坐标点的数量
+  % c_c_results_file_path: camera_coordinate_results.mat 文件路径
+  % output_file_path: 保存.mat文件的名称
+  get_c_c_in_same_height(points_nums, same_height_nums, c_c_results_file_path, output_file_path)
+  ```
+
+  
 
 ### 物体扫描
 
