@@ -1,66 +1,28 @@
-ÊµÑéÆ÷²Ä:
-	Õ½½¢STM32F103¿ª·¢°åV3°æ±¾
+å®žéªŒå™¨æ:
+	æˆ˜èˆ°STM32F103å¼€å‘æ¿V3ç‰ˆæœ¬
 	
-ÊµÑéÄ¿µÄ:
-	Ñ§Ï°¶¨Ê±Æ÷µÄPWM¹¦ÄÜ
+å®žéªŒç›®çš„:
+	å­¦ä¹ å®šæ—¶å™¨çš„PWMåŠŸèƒ½
 	
-Ó²¼þ×ÊÔ´:
-	1,DS0(Á¬½ÓÔÚPB5)
-	2,¶¨Ê±Æ÷3(TIM3),Ê¹ÓÃTIM3µÄÍ¨µÀ2(CH2),¿ªÆô²¿·ÖÖØÓ³Éä,½«TIM3_CH2Êä³öµ½PB5.
-	´Ó¶øÊµÏÖPWMÊä³ö¿ØÖÆDS0ÁÁ¶È.
+ç¡¬ä»¶èµ„æº:
+	1,DS0(è¿žæŽ¥åœ¨PB5)
+	2,å®šæ—¶å™¨3(TIM3),ä½¿ç”¨TIM3çš„é€šé“2(CH2),å¼€å¯éƒ¨åˆ†é‡æ˜ å°„,å°†TIM3_CH2è¾“å‡ºåˆ°PB5.
+	ä»Žè€Œå®žçŽ°PWMè¾“å‡ºæŽ§åˆ¶DS0äº®åº¦.
 	
-ÊµÑéÏÖÏó:
-	±¾ÊµÑé,DS0ÓÉ°µµ½ÁÁ,ÔÙÓÉÁÁµ½°µ,ÔÙÓÉ°µµ½ÁÁ,ÒÀ´ÎÑ­»·.
+å®žéªŒçŽ°è±¡:
+	æœ¬å®žéªŒ,DS0ç”±æš—åˆ°äº®,å†ç”±äº®åˆ°æš—,å†ç”±æš—åˆ°äº®,ä¾æ¬¡å¾ªçŽ¯.
 
-Ó²¼þ×ÊÔ´:
-	1,DS0(Á¬½ÓÔÚPB5),DS1(Á¬½ÓÔÚPE5)
-	2,·äÃùÆ÷(Á¬½ÓÔÚPB8)
-	3,°´¼üKEY0(PE4)/KEY1(PE3)/KEY2(PE2)/KEY_UP(PA0,Ò²³ÆÖ®ÎªWK_UP)
+ç¡¬ä»¶èµ„æº:
+	1,DS0(è¿žæŽ¥åœ¨PB5),DS1(è¿žæŽ¥åœ¨PE5)
+	2,èœ‚é¸£å™¨(è¿žæŽ¥åœ¨PB8)
+	3,æŒ‰é”®KEY0(PE4)/KEY1(PE3)/KEY2(PE2)/KEY_UP(PA0,ä¹Ÿç§°ä¹‹ä¸ºWK_UP)
 	
-ÊµÑéÏÖÏó:
-	±¾ÊµÑé,ÀûÓÃÍâ²¿ÖÐ¶Ï£¬ÊµÏÖÓëÊµÑé3ÀàËÆµÄÐ§¹û£¬¼´£ºÍ¨¹ý¿ª·¢°åÉÏÔØÓÐµÄ4¸ö°´
-	Å¥£¨KEY_UP¡¢KEY0¡¢KEY1ºÍKEY2£©£¬À´¿ØÖÆ°åÉÏµÄ2¸öLED£¨DS0ºÍDS1£©ºÍ·äÃùÆ÷
-	£¬ÆäÖÐWK_UP¿ØÖÆ·äÃùÆ÷£¬°´Ò»´Î½Ð£¬ÔÙ°´Ò»´ÎÍ££»KEY2¿ØÖÆDS0£¬°´Ò»´ÎÁÁ£¬ÔÙ°´
-	Ò»´ÎÃð£»KEY1¿ØÖÆDS1£¬Ð§¹ûÍ¬KEY2£»KEY0ÔòÍ¬Ê±¿ØÖÆDS0ºÍDS1£¬°´Ò»´Î£¬ËûÃÇµÄ
-	×´Ì¬¾Í·­×ªÒ»´Î¡£
-	
-×¢ÒâÊÂÏî:
-	ÎÞ.
--------------------------------------------------------------------------------------------
-¡ôÆäËûÖØÒªÁ¬½Ó£º
-  ¿ª·¢°å¹âÅÌ×ÊÁÏÏÂÔØµØÖ·£¨ÊÓÆµ+ÎÄµµ+Ô´ÂëµÈ£©£ºhttp://www.openedv.com/posts/list/13912.htm
-  Ìí¼ÓÎ¢ÐÅ¹«ÖÚÆ½Ì¨·½·¨£ºhttp://www.openedv.com/posts/list/45157.htm
-  
-
-¡ôÓÑÇéÌáÊ¾£ºÈç¹ûÄúÏëÒÔºó¼°Ê±Ãâ·ÑµÄÊÕµ½ÕýµãÔ­×ÓËùÓÐ¿ª·¢°å×ÊÁÏ¸üÐÂÔö¼ÓÍ¨Öª£¬Çë¹Ø×¢Î¢ÐÅ¹«ÖÚÆ½Ì¨£º
-
- 2ÖÖÌí¼Ó·½·¨£º£¨¶¯¶¯ÊÖÌáÉýÄúµÄÑ§Ï°Ð§ÂÊ£¬¾ªÏ²²»¶ÏÅ¶£©
-£¨1£©´ò¿ªÎ¢ÐÅ->Ìí¼ÓÅóÓÑ->¹«ÖÚºÅ->ÊäÈë¡°ÕýµãÔ­×Ó¡±->µã»÷¹Ø×¢
-£¨2£©´ò¿ªÎ¢ÐÅ->Ìí¼ÓÅóÓÑ->ÊäÈë¡°alientek_stm32"->µã»÷¹Ø×¢
-
- ¾ßÌåÎ¢ÐÅÌí¼Ó·½·¨£¬Çë²Î¿¼Ìû×Ó£ºhttp://www.openedv.com/posts/list/45157.htm
-
- 
-
-			ÕýµãÔ­×Ó@ALIENTEK 
-			¹ãÖÝÊÐÐÇÒíµç×Ó¿Æ¼¼ÓÐÏÞ¹«Ë¾
-			µç»°£º020-38271790
-			´«Õæ£º020-36773971
-			¹ºÂò£ºhttp://eboard.taobao.com
-			¹«Ë¾ÍøÕ¾£ºwww.alientek.com
-			¼¼ÊõÂÛÌ³£ºwww.openedv.com
-
-
-
-
-
-
-
-
-
-
-
-
+å®žéªŒçŽ°è±¡:
+	æœ¬å®žéªŒ,åˆ©ç”¨å¤–éƒ¨ä¸­æ–­ï¼Œå®žçŽ°ä¸Žå®žéªŒ3ç±»ä¼¼çš„æ•ˆæžœï¼Œå³ï¼šé€šè¿‡å¼€å‘æ¿ä¸Šè½½æœ‰çš„4ä¸ªæŒ‰
+	é’®ï¼ˆKEY_UPã€KEY0ã€KEY1å’ŒKEY2ï¼‰ï¼Œæ¥æŽ§åˆ¶æ¿ä¸Šçš„2ä¸ªLEDï¼ˆDS0å’ŒDS1ï¼‰å’Œèœ‚é¸£å™¨
+	ï¼Œå…¶ä¸­WK_UPæŽ§åˆ¶èœ‚é¸£å™¨ï¼ŒæŒ‰ä¸€æ¬¡å«ï¼Œå†æŒ‰ä¸€æ¬¡åœï¼›KEY2æŽ§åˆ¶DS0ï¼ŒæŒ‰ä¸€æ¬¡äº®ï¼Œå†æŒ‰
+	ä¸€æ¬¡ç­ï¼›KEY1æŽ§åˆ¶DS1ï¼Œæ•ˆæžœåŒKEY2ï¼›KEY0åˆ™åŒæ—¶æŽ§åˆ¶DS0å’ŒDS1ï¼ŒæŒ‰ä¸€æ¬¡ï¼Œä»–ä»¬çš„
+	çŠ¶æ€å°±ç¿»è½¬ä¸€æ¬¡ã€‚
 
 
 
