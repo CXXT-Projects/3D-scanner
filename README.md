@@ -83,7 +83,13 @@
   get_c_c_in_same_height(points_nums, same_height_nums, c_c_results_file_path, output_file_path)
   ```
 
-  
+- 使用同一高度的点云数据拟合圆心
+
+  ```matlab
+  calc_circle_center(height_num, c_c_same_height_data_file_path, output_file_path)
+  ```
+
+  ![Snipaste_2020-01-12_21-48-26.png](https://i.loli.net/2020/01/12/dfTucHEJ1XotwYb.png)
 
 ### 物体扫描
 

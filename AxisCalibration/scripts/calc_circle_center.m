@@ -1,4 +1,4 @@
-function [] = calc_circle_center(height_num, c_c_same_height_data_file_path, output_file_name)
+function [] = calc_circle_center(height_num, c_c_same_height_data_file_path, output_file_path)
 
 c_c_same_height_data = load(c_c_same_height_data_file_path);
 
@@ -18,9 +18,9 @@ for i = 1: height_num
         
         eval([field_name, '=', mat2str(result), ';']);
         if i == 1 && j == 1
-            save(output_file_name, field_name);
+            save(output_file_path, field_name);
         else
-            save(output_file_name, field_name, '-append');
+            save(output_file_path, field_name, '-append');
         end
         
     end
