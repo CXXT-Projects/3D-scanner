@@ -1,15 +1,12 @@
 % 灰度归一化取平均（u取小数）得到(u, v)点
 
-% input_num 处理数据的数量
-% input_filename 输入的mat文件名
+% input_num 需要处理的图片数量
+% input_filename 处理的图片的文件名
 % output_filename 输出的mat文件名
 
 function []  = image_thresh_average(input_num, input_filename, output_filename)
 
-% thresh_data = load(input_filename);
-
 for i = 1 :input_num
-%     data = thresh_data.(strcat('thresh',num2str(i)));
     data = imread(strcat(input_filename, num2str(i), '.bmp'));
     
     % m_size 是行数 n_size 是列数

@@ -1,11 +1,11 @@
 % 计算世界坐标系下的坐标点
 
-% image_num: 图片数量
+% input_num: 处理数据的组数
 % calib_file_path: Calib_Results.mat文件的路径
-% u_v_results_file_path: u,v点的坐标
-% output_filename: 输出文件的名称
+% u_v_results_file_path: 存储u,v点的坐标mat路径
+% output_file_path: 输出的mat文件路径
 
-function []  = calc_world_coordinate(input_num, calib_file_path, u_v_results_file_path, output_filename)
+function []  = calc_world_coordinate(input_num, calib_file_path, u_v_results_file_path, output_file_path)
 
 external_matrix = get_external_params(input_num, calib_file_path);
 internal_matrix = get_internal_params(calib_file_path);
@@ -39,9 +39,9 @@ for i = 1:input_num
         eval([field_name, '=', mat2str(result), ';']);
         %     保存为.mat文件
         if i == 1
-            save(output_filename, field_name);
+            save(output_file_path, field_name);
         else
-            save(output_filename, field_name, '-append');
+            save(output_file_path, field_name, '-append');
         end
         
     end

@@ -1,12 +1,12 @@
-function [x0] = calc_true_camera_coordinates(image_num, output_file_name)
+function [x0] = calc_true_camera_coordinates(image_num, u_v_file_path, output_file_name)
 
-find_results = load('u_v_results.mat');
+find_results = load(u_v_file_path);
 
-[internal_matrix]  = get_internal_params('Calib_Results.mat');
+[internal_matrix]  = get_internal_params('../public_data/Calib_Results.mat');
 % 内参
 A = internal_matrix;
 
-[X, Y, Z] = get_all_camera_coordinate(7, 'c_c_results.mat');
+[X, Y, Z] = get_all_camera_coordinate(7, '../public_data/c_c_results.mat');
 
 [fitresult, gof] = createFit(X, Y, Z);
 %  coeffs = [p00, p10, p10]
@@ -64,37 +64,10 @@ for i = 1:image_num
         s(1, k) = double(value);
     end
     
-    
-    %     new_eqn = eqn(1, 2) == 0;
-    % 求解这一组的s的值
-%     sol_s = solve(eqn);
-   
-    %     new_x = A_inv(1, :) * (sol_s .* pixel_mat);
-    %     new_y = A_inv(2, :) * (sol_s .* pixel_mat);
-    %     new_z = A_inv(3, :) * (sol_s .* pixel_mat);
     tmp_result = A_inv *([s(1, :); s(1, :); s(1, :)] .* pixel_mat);
     
     result = tmp_result';
-   
-    %     for j = 1:m
-    %         u = data(j, 1);
-    %         v = data(j, 2);
-    %
-    %         % x, y, z 是相机坐标系下的点
-    %         syms x y z s;
-    %         vars = [x y z s];
-    %         u_v_mat = [u; v; 1];
-    %         c_c_matrix = [x; y; z];
-    %         eqns = [s .*u_v_mat == A * c_c_matrix, p00 + p10 * x + p01 * y - z == 0 ];
-    %         [x, y, z, s] =solve(eqns, vars);
-    %         x = double(x);
-    %         y = double(y);
-    %         z = double(z);
-    %         s = double(s);
-    %
-    %         result(j, :) = [x, y, z];
-    %     end
-    
+
     eval([field_name, '=', mat2str(result), ';']);
     
     %     保存为.mat文件
