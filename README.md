@@ -181,7 +181,10 @@
   
 
 ### 物体扫描
-
+- 整理公用数据。 `./examples/public_data` 存放的是公用数据的文件夹，包括
+    - `c_c_results.mat` -- 确定激光平面所用到的点云数据
+    - `Calib_Results.mat` -- 相机标定的结果
+ 
 - 拍摄图像并自动化保存（image.bmp）
 
   调用下方函数，进入debug模式，在循环下的第一行打断点，配合转台舵机，每转一次就运行一次代码
@@ -214,15 +217,6 @@
   rect2mask_bmp(img_num,img_name,y_max)
   ```
 
-  
-
-- 在`./CameraCalibration/scripts/` 文件夹中复制`Calib_Results.mat` , `c_c_results.mat`到 `scripts` 文件夹中，其中`Calib_Results.mat`是相机标定的结果，`c_c_results.mat`是确定激光平面所用到的点云数据。
-
-  
-
-- 在`./examples/Scripts/`复制所有的文件至`scripts`文件夹中。
-
-  
 
 - 二值化操作
 
