@@ -11,13 +11,13 @@ Z = [];
 camera_coordinate_results = load(results_file_path);
 
 for i = 1:input_num
-    if i == 100
-        continue
-    end
-    
-    if i == 101
-        continue
-    end
+%     if i == 100
+%         continue
+%     end
+%     
+%     if i == 101
+%         continue
+%     end
     
     data = camera_coordinate_results.(strcat('c_c', num2str(i)));
     x = data(:, 1);
