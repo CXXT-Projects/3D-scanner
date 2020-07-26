@@ -4,7 +4,7 @@
 
 结合计算机视觉、光学工程、自动控制原理等相关知识，利用工业相机、线激光光源、步进电机等硬件，构建半自动/自动的激光3D扫描系统，实现对目标表面形貌的3D扫描。
 
-![](https://github.com/CXXT-Projects/3D-scanner/blob/master/examples/demo.jpg)
+![demo.jpg](https://i.loli.net/2020/07/26/LWDuyHPzYQV6f3R.jpg)
 
 ##  Experimental Preparation
 
@@ -138,7 +138,7 @@
 
   需要拍摄正位置1张、不同角度左偏3张、不同角度右偏3张共7张图片（位置如下图所示），保持正常亮度、曝光度，并保存在本地。
 
-![](C:\Users\skyfly_fzy\Desktop\TIM图片20200113131154.png)
+![cc_remove.jpg](https://i.loli.net/2020/07/27/IlhvJ5PdVa3yAzw.jpg)
 
 
 
