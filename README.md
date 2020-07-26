@@ -1,6 +1,10 @@
 # 3D-scanner
 
+## Introduction
 
+结合计算机视觉、光学工程、自动控制原理等相关知识，利用工业相机、线激光光源、步进电机等硬件，构建半自动/自动的激光3D扫描系统，实现对目标表面形貌的3D扫描。
+
+![](https://github.com/CXXT-Projects/3D-scanner.git/blob/master/examples/demo.jpg)
 
 ##  Experimental Preparation
 
@@ -184,7 +188,7 @@
 - 整理公用数据。 `./examples/public_data` 存放的是公用数据的文件夹，包括
     - `c_c_results.mat` -- 确定激光平面所用到的点云数据
     - `Calib_Results.mat` -- 相机标定的结果
- 
+
 - 拍摄图像并自动化保存（image.bmp）
 
   调用下方函数，进入debug模式，在循环下的第一行打断点，配合转台舵机，每转一次就运行一次代码
