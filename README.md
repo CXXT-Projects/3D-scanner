@@ -4,7 +4,7 @@
 
 结合计算机视觉、光学工程、自动控制原理等相关知识，利用工业相机、线激光光源、步进电机等硬件，构建半自动/自动的激光3D扫描系统，实现对目标表面形貌的3D扫描。
 
-![](https://github.com/CXXT-Projects/3D-scanner.git/blob/master/examples/demo.jpg)
+![](https://github.com/CXXT-Projects/3D-scanner/blob/master/examples/demo.jpg)
 
 ##  Experimental Preparation
 
